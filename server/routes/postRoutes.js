@@ -15,12 +15,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-// cloudinary.config({
-//   cloud_name: 'dsjm50po0',
-//   api_key: '884812184546372',
-//   api_secret: 'srQbgK2cpvU1vNpGPRLPbSggfEA',
-// });
-
 // GET ALL POSTS
 router.route('/').get(async (req, res) => {
   try {
@@ -32,25 +26,6 @@ router.route('/').get(async (req, res) => {
   }
 });
 
-//CREATE A POST
-// router.route('/').post(async (req, res) => {
-//   try {
-//     const { name, prompt, photo } = req.body;
-//     const photoUrl = await cloudinary.uploader.upload(photo);
-
-//     const newPost = await Post.create({
-//       name,
-//       prompt,
-//       photo: photoUrl.url,
-//     });
-
-//     res.status(201).json({ success: true, data: newPost });
-//     console.log('post saved to mongo');
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).json({ success: false, message: error });
-//   }
-// });
 router.route('/').post(async (req, res) => {
   try {
     const { name, prompt, photo } = req.body;
